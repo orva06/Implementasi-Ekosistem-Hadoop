@@ -24,14 +24,13 @@ hadoop fs -cat <direktori/[namaFile]>
 ```
 
 ### Hive ###
-Mengecek database dan table:
+Mengecek database dan table dengan query yang mirip MySQL:
 ```
-*show databases;
-*show tables;
+show databases;
+show tables;
 ```
-
--Membuat eksternal table (katanya ada internal dan eksternal, blm tau apa bedanya): Contoh: 
-
+Membuat eksternal table 
+```
 create external table if not exists <namaTabel> (
 id int,
 nama string,
@@ -39,13 +38,18 @@ alamat string)
 row format delimited
 fields terminated by '|'
 stored as textfile;
+```
+Mengecek apakah tabel sudah terbuat
+```
+show tables;
+```
 
--bisa cek apakah tabel sudah terbuat dengan command : show tables;
-
--load data hdfs ke hive: load data inpath '<direktori/[namaFile]> into table <tabelEksternalTadi>;
-
--melakukan analisis deskriptif pada tabel dengan query yang mirip dengan mysql seperti:
-
-*select * from <namaTabel>;
-*select * from <namaTabel> where alamat="Bandung";
-
+Load data HDFS ke Hive
+```
+load data inpath '<direktori/[namaFile]> into table <tabelEksternalSebelumnya>;
+```
+Melakukan analisis deskriptif pada tabel dengan query yang mirip MySQL seperti:
+```
+select * from <namaTabel>;
+select * from <namaTabel> where alamat="Bandung";
+```
