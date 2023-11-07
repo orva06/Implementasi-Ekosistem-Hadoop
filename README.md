@@ -33,6 +33,14 @@ Crawl data komen YouTube:
 3. login dengan username: airflow dan password: airflow
 4. cari dan jalankan dags yang telah kita buat dari file crawlfinal.py
 
+Untuk hasil file output yang dihasilkan oleh program airflow, kita dapat memindahkan atau membuat salinan dari file tersebut kedalam hdfs, langkahnya sebagai berikut:
+1. Pastikan kita mengetahui path file tersebut disimpan didalam container airflow
+2. Pastikan kita mengetahui path file hdfs untuk menyipan file pada hadoop fs
+3. gunakan kode berikut:
+```
+docker cp <container-airflow>:/path/ke/airflow/output.sql <container-hdfs>:/path/ke/hdfs
+```
+
 ### Sqoop ###
 Memindahkan file MySQL ke HDFS
 ```
