@@ -7,7 +7,27 @@
 |ORVALAMARVA                     | 1202204249|
 
 ### Airflow ###
-Crawl data komen YouTube
+
+Menginstall airflow di docker:
+Fecth docker-compose.yaml
+```
+curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.7.2/docker-compose.yaml'
+```
+Buat folder dags, plugins, dan config
+```
+mkdir -p ./dags ./plugins ./config
+```
+Initialize the database
+```docker compose up airflow-init```
+
+Running Airflow
+```docker compose up```
+
+Crawl data komen YouTube:
+-buat file .py didalam folder dags *terlampir di file crawlfinal.py
+-masuk ke localhost port ariflow terkait, secara deault localhost:8080
+-login dengan username: airflow dan password: airflow
+-cari dan jalankan dags yang telah kita buat dari file crawlfinal.py
 
 ### Sqoop ###
 Memindahkan file MySQL ke HDFS
