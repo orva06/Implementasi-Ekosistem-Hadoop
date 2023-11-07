@@ -18,16 +18,20 @@ Buat folder dags, plugins, dan config
 mkdir -p ./dags ./plugins ./config
 ```
 Initialize the database
-```docker compose up airflow-init```
+```
+docker compose up airflow-init
+```
 
 Running Airflow
-```docker compose up```
+```
+docker compose up
+```
 
 Crawl data komen YouTube:
--buat file .py didalam folder dags *terlampir di file crawlfinal.py
--masuk ke localhost port ariflow terkait, secara deault localhost:8080
--login dengan username: airflow dan password: airflow
--cari dan jalankan dags yang telah kita buat dari file crawlfinal.py
+1. buat file .py didalam folder dags *terlampir di file crawlfinal.py
+2. masuk ke localhost port ariflow terkait, secara deault localhost:8080
+3. login dengan username: airflow dan password: airflow
+4. cari dan jalankan dags yang telah kita buat dari file crawlfinal.py
 
 ### Sqoop ###
 Memindahkan file MySQL ke HDFS
